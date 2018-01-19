@@ -6,7 +6,7 @@
   "bugs": "https://github.com/jdxcode/version/issues",
   "dependencies": {
     "@dxcli/command": "^0.1.8",
-    "@dxcli/config": "^0.1.15",
+    "@dxcli/config": "^0.1.17",
     "cli-ux": "^3.1.0"
   },
   "devDependencies": {

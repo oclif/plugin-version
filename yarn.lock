@@ -123,6 +123,16 @@
     lodash "^4.17.4"
     read-pkg "^3.0.0"
 
+"@dxcli/config@^0.1.17":
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.17.tgz#e077873abfa4247e2b66be4813f46eeb8ee94df9"
+  dependencies:
+    debug "^3.1.0"
+    fs-extra "^5.0.0"
+    load-json-file "^4.0.0"
+    lodash "^4.17.4"
+    read-pkg "^3.0.0"
+
 "@dxcli/dev-commitmsg@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@dxcli/dev-commitmsg/-/dev-commitmsg-0.0.3.tgz#8941971c9778b675dd14c407c1123b8bef397757"
