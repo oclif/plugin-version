@@ -5,8 +5,7 @@
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/jdxcode/version/issues",
   "dependencies": {
-    "@dxcli/command": "^0.1.1",
-    "cli-ux": "^2.0.21"
+    "@dxcli/command": "^0.1.1"
   },
   "devDependencies": {
     "@dxcli/dev-semantic-release": "^0.0.3",
