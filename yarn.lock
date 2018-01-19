@@ -102,26 +102,26 @@
   dependencies:
     find-up "^2.1.0"
 
-"@dxcli/command@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@dxcli/command/-/command-0.1.1.tgz#8670eae6c303d7883f3177a5aa44cac31d74af48"
+"@dxcli/command@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@dxcli/command/-/command-0.1.7.tgz#aaeee0c53926427688289c5fb8e6df6d29b208d1"
   dependencies:
-    "@dxcli/config" "^0.1.6"
+    "@dxcli/config" "^0.1.13"
     "@dxcli/parser" "^0.0.2"
     "@dxcli/screen" "^0.0.0"
-    cli-ux "^3.0.0-alpha.2"
+    cli-ux "^3.0.0"
     debug "^3.1.0"
     http-call "^5.0.1"
 
-"@dxcli/config@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.6.tgz#c5787c1d21a150e03c6e3fcf2113cc0efb647a79"
+"@dxcli/config@^0.1.13":
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@dxcli/config/-/config-0.1.14.tgz#084cd846bed529fff04b2515831bd960ca3112c8"
   dependencies:
     debug "^3.1.0"
     fs-extra "^5.0.0"
     load-json-file "^4.0.0"
     lodash "^4.17.4"
-    read-pkg-up "^3.0.0"
+    read-pkg "^3.0.0"
 
 "@dxcli/dev-commitmsg@^0.0.3":
   version "0.0.3"
@@ -147,21 +147,21 @@
     "@semantic-release/npm" "^2.6.1"
     semantic-release "^12.2.0"
 
-"@dxcli/dev-test@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@dxcli/dev-test/-/dev-test-0.2.1.tgz#0e4f82c1f2159bc37e06f611968178ee0039d3b4"
+"@dxcli/dev-test@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@dxcli/dev-test/-/dev-test-0.2.2.tgz#9d46b00b5feacc45320c93b8c2576437dd42bded"
   dependencies:
     "@dxcli/dev-nyc-config" "^0.0.3"
     "@types/ansi-styles" "^2.0.30"
-    "@types/chai" "^4.1.0"
+    "@types/chai" "^4.1.1"
     "@types/chai-as-promised" "^7.1.0"
-    "@types/lodash" "^4.14.92"
+    "@types/lodash" "^4.14.93"
     "@types/mocha" "^2.2.46"
     "@types/strip-ansi" "^3.0.0"
     chai "^4.1.2"
     chai-as-promised "^7.1.1"
     lodash "^4.17.4"
-    mocha-junit-reporter "^1.15.0"
+    mocha-junit-reporter "^1.16.0"
     std-mocks "^1.0.1"
     strip-ansi "^4.0.0"
     ts-node "^4.1.0"
@@ -303,11 +303,11 @@
   dependencies:
     "@types/chai" "*"
 
-"@types/chai@*", "@types/chai@^4.1.0":
+"@types/chai@*", "@types/chai@^4.1.1":
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.1.1.tgz#15f1257fab17b7acb9c413f9f88d3d87f834d11e"
 
-"@types/lodash@^4.14.92":
+"@types/lodash@^4.14.93":
   version "4.14.93"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.93.tgz#a6d2a1e1601a3c29196f38ef1990b68a9afa1e1c"
 
@@ -323,9 +323,9 @@
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
 
-"@types/read-pkg-up@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@types/read-pkg-up/-/read-pkg-up-3.0.1.tgz#05911057c3be1aade38bfecbb9a8554dbd0582be"
+"@types/read-pkg@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/read-pkg/-/read-pkg-3.0.0.tgz#17ab6f0b396a58a5567ee387f558f2caedc8ae53"
   dependencies:
     "@types/normalize-package-data" "*"
 
@@ -883,9 +883,9 @@ cli-table@^0.3.1:
   dependencies:
     colors "1.0.3"
 
-cli-ux@^3.0.0-alpha.2:
-  version "3.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.0.0-alpha.3.tgz#ad88be894af0e3524b78d5fb22ee7d4891343898"
+cli-ux@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.0.1.tgz#21033e0d89e303c2c9c90c35a9580d98f926ef55"
   dependencies:
     "@dxcli/screen" "^0.0.0"
     "@heroku/linewrap" "^1.0.0"
@@ -896,7 +896,7 @@ cli-ux@^3.0.0-alpha.2:
     lodash "^4.17.4"
     password-prompt "^1.0.3"
     rxjs "^5.5.6"
-    semver "^5.4.1"
+    semver "^5.5.0"
     strip-ansi "^4.0.0"
     supports-color "^5.1.0"
 
@@ -3024,7 +3024,7 @@ mkdirp@0.5.1, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.1:
   dependencies:
     minimist "0.0.8"
 
-mocha-junit-reporter@^1.15.0:
+mocha-junit-reporter@^1.16.0:
   version "1.16.0"
   resolved "https://registry.yarnpkg.com/mocha-junit-reporter/-/mocha-junit-reporter-1.16.0.tgz#3d76af53e2f5e81f9b93406acee1e48b5dd6e6cc"
   dependencies:
@@ -3928,7 +3928,7 @@ semantic-release@^12.2.0:
     resolve-from "^4.0.0"
     semver "^5.4.1"
 
-"semver@2 >=2.2.1 || 3.x || 4 || 5", "semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1:
+"semver@2 >=2.2.1 || 3.x || 4 || 5", "semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
