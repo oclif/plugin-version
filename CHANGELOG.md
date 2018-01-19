@@ -1,3 +1,12 @@
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/dxcli/version/compare/389957984170a73c8ea461271eb4131ebd018415...v0.1.2) (2018-01-19)
+
+
+### Bug Fixes
+
+* set dirname ([cd2303b](https://github.com/dxcli/version/commit/cd2303b))
+* updated command ([1045140](https://github.com/dxcli/version/commit/1045140))
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/dxcli/version/compare/10782d6afe883a9f28b77f75ac8e3fc8d205b01d...v0.1.1) (2018-01-19)
 
