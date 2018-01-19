@@ -18,7 +18,7 @@ const testHook = (_: string, hookOpts: object = {}, opts: RunHookOptions = {}) =
   if (opts.stdout) test = test.stdout
   if (opts.stderr) test = test.stderr
   test(description, async () => {
-    const config = await Config.read()
+    const config = await Config.read({root: __dirname})
     const run = () => init({config, ...hookOpts} as any)
     if (typeof opts.exit === 'number') await expect(run()).to.be.rejectedWith(`EEXIT: ${opts.exit}`)
     else await run()
