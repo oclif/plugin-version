@@ -11,6 +11,7 @@
       "./src"
     ],
     "strict": true,
+    "sourceMap": true,
     "strictFunctionTypes": false,
     "target": "es2017"
   },
