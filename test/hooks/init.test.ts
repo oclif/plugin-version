@@ -1,10 +1,30 @@
-import {describe, testHook} from '@dxcli/dev-test'
+import {expect, test} from '@dxcli/dev-test'
 
 const pjson = require('../../package.json')
 
 describe('hooks:init', () => {
   const stdout = `@dxcli/version/${pjson.version} (${process.platform}-${process.arch}) node-${process.version}\n`
-  testHook('init', {id: '-v'}, {stdout, exit: 0})
-  testHook('init', {id: '--version'}, {stdout, exit: 0})
-  testHook('init')
+
+  test()
+  .stdout()
+  .hook('init', {id: '-v'})
+  .exit(0)
+  .end('catches -v', output => {
+    expect(output.stdout).to.equal(stdout)
+  })
+
+  test()
+  .stdout()
+  .hook('init', {id: '--version'})
+  .exit(0)
+  .end('catches --version', output => {
+    expect(output.stdout).to.equal(stdout)
+  })
+
+  test()
+  .stdout()
+  .hook('init', {id: 'foobar'})
+  .end('does nothing', output => {
+    expect(output.stdout).to.equal('')
+  })
 })
