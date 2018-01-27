@@ -5,7 +5,7 @@ const pjson = require('../../package.json')
 describe('hooks:init', () => {
   const stdout = `@dxcli/version/${pjson.version} (${process.platform}-${process.arch}) node-${process.version}\n`
 
-  test()
+  test
   .stdout()
   .hook('init', {id: '-v'})
   .exit(0)
@@ -13,7 +13,7 @@ describe('hooks:init', () => {
     expect(output.stdout).to.equal(stdout)
   })
 
-  test()
+  test
   .stdout()
   .hook('init', {id: '--version'})
   .exit(0)
@@ -21,7 +21,7 @@ describe('hooks:init', () => {
     expect(output.stdout).to.equal(stdout)
   })
 
-  test()
+  test
   .stdout()
   .hook('init', {id: 'foobar'})
   .end('does nothing', output => {

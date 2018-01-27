@@ -5,7 +5,7 @@ const pjson = require('../../package.json')
 describe('version', () => {
   const stdout = `@dxcli/version/${pjson.version} (${process.platform}-${process.arch}) node-${process.version}\n`
 
-  test()
+  test
   .stdout()
   .command('version')
   .end('runs version', output => {
