@@ -1,3 +1,11 @@
+<a name="0.1.11"></a>
+## [0.1.11](https://github.com/dxcli/version/compare/b48ae5bfcc901e0de0a45f510e7faa764a79b9f0...v0.1.11) (2018-01-28)
+
+
+### Bug Fixes
+
+* bump deps ([d620e6e](https://github.com/dxcli/version/commit/d620e6e))
+
 <a name="0.1.10"></a>
 ## [0.1.10](https://github.com/dxcli/version/compare/bdc00c1cf6868eb0fe665805546b20949ea5debc...v0.1.10) (2018-01-28)
 
