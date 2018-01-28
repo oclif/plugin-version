@@ -1,3 +1,11 @@
+<a name="0.1.7"></a>
+## [0.1.7](https://github.com/dxcli/version/compare/5b57dc75115af5894f9bd120eae4b355b32ecb63...v0.1.7) (2018-01-28)
+
+
+### Bug Fixes
+
+* ran generator ([f5632a2](https://github.com/dxcli/version/commit/f5632a2))
+
 <a name="0.1.6"></a>
 ## [0.1.6](https://github.com/dxcli/version/compare/a99fd98219bcd1959315d46df8f521381e623a5a...v0.1.6) (2018-01-27)
 
