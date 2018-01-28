@@ -1,4 +1,4 @@
-import {expect, test} from '@dxcli/dev-test'
+import {expect, test} from '@dxcli/test'
 
 const pjson = require('../../package.json')
 
