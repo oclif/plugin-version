@@ -1,3 +1,11 @@
+<a name="0.1.8"></a>
+## [0.1.8](https://github.com/dxcli/version/compare/f5632a2f3e12745a5dc9d531aa4e6f4c18b58b76...v0.1.8) (2018-01-28)
+
+
+### Bug Fixes
+
+* updated deps ([61722bd](https://github.com/dxcli/version/commit/61722bd))
+
 <a name="0.1.7"></a>
 ## [0.1.7](https://github.com/dxcli/version/compare/5b57dc75115af5894f9bd120eae4b355b32ecb63...v0.1.7) (2018-01-28)
 
