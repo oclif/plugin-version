@@ -8,14 +8,14 @@
     "@dxcli/command": "^0.1.23",
     "@dxcli/config": "^0.1.28",
     "@dxcli/parser": "^0.0.5",
-    "cli-ux": "^3.2.2"
+    "cli-ux": "^3.3.6"
   },
   "devDependencies": {
-    "@dxcli/dev": "^2.0.13",
+    "@dxcli/dev": "^2.0.14",
     "@dxcli/engine": "^0.1.13",
     "@dxcli/semantic-release": "^0.3.3",
     "@dxcli/test": "^0.9.17",
-    "@dxcli/tslint": "^0.0.24",
+    "@dxcli/tslint": "^0.1.2",
     "chai": "^4.1.2",
     "eslint": "^4.16.0",
     "husky": "^0.14.3",
