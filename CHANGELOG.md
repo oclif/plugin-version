@@ -1,3 +1,11 @@
+<a name="0.1.12"></a>
+## [0.1.12](https://github.com/dxcli/version/compare/d620e6ea18e72bd715b3cd0cab8a5ac04a1caf21...v0.1.12) (2018-01-28)
+
+
+### Bug Fixes
+
+* updated deps and moved config to peer ([36a7faf](https://github.com/dxcli/version/commit/36a7faf))
+
 <a name="0.1.11"></a>
 ## [0.1.11](https://github.com/dxcli/version/compare/b48ae5bfcc901e0de0a45f510e7faa764a79b9f0...v0.1.11) (2018-01-28)
 
