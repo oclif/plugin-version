@@ -102,12 +102,13 @@
   dependencies:
     find-up "^2.1.0"
 
-"@dxcli/command@^0.1.23":
-  version "0.1.23"
-  resolved "https://registry.yarnpkg.com/@dxcli/command/-/command-0.1.23.tgz#93a77b455ca1eddafc58e7966a3127dec5be420b"
+"@dxcli/command@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@dxcli/command/-/command-0.2.0.tgz#d076919322cd7b9f61ff2144d46eaa47f62863c0"
   dependencies:
     "@dxcli/parser" "^0.0.5"
     debug "^3.1.0"
+    lodash "^4.17.4"
     tslib "^1.9.0"
 
 "@dxcli/config@^0.1.28":
@@ -916,9 +917,9 @@ cli-table@^0.3.1:
   dependencies:
     colors "1.0.3"
 
-cli-ux@^3.3.6:
-  version "3.3.6"
-  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.3.6.tgz#99b8ef6965d03786d9396eb29d413a5dc14f0cef"
+cli-ux@^3.3.7:
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-3.3.7.tgz#523531287fce59726371724a00fd47e1cc6ef64c"
   dependencies:
     "@dxcli/screen" "^0.0.1"
     "@heroku/linewrap" "^1.0.0"
