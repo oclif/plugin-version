@@ -12,7 +12,7 @@
     "@dxcli/config": "^0.1.29",
     "@dxcli/dev": "^2.0.15",
     "@dxcli/engine": "^0.1.15",
-    "@dxcli/semantic-release": "^0.3.3",
+    "@dxcli/semantic-release": "^1.0.0",
     "@dxcli/test": "^0.9.18",
     "@dxcli/tslint": "^0.1.2",
     "chai": "^4.1.2",
