@@ -3,7 +3,7 @@
 import Command from '@anycli/command'
 
 export default class Version extends Command {
-  variableArgs: true
+  static variableArgs: true
 
   async run() {
     console.log(this.config.userAgent)
