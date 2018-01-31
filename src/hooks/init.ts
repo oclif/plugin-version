@@ -1,4 +1,4 @@
-import {Hooks, IHook} from '@dxcli/config'
+import {Hooks, IHook} from '@anycli/config'
 import cli from 'cli-ux'
 
 import Version from '../commands/version'

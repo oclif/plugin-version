@@ -3,7 +3,7 @@ import {expect, test} from '@dxcli/test'
 const pjson = require('../../package.json')
 
 describe('hooks:init', () => {
-  const stdout = `@dxcli/version/${pjson.version} (${process.platform}-${process.arch}) node-${process.version}\n`
+  const stdout = `@anycli/version/${pjson.version} (${process.platform}-${process.arch}) node-${process.version}\n`
 
   test
   .stdout()
