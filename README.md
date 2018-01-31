@@ -1,5 +1,5 @@
 @anycli/version
-==============
+===============
 
 a anycli command that just shows the CLI version
 
