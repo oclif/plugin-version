@@ -11,12 +11,12 @@
   },
   "bugs": "https://github.com/jdxcode/version/issues",
   "dependencies": {
-    "@anycli/command": "^0.2.17",
+    "@anycli/command": "^0.2.18",
     "@anycli/config": "^0.2.3",
     "cli-ux": "^3.3.10"
   },
   "devDependencies": {
-    "@anycli/engine": "^0.1.33",
+    "@anycli/engine": "^0.1.35",
     "@anycli/test": "^0.10.0",
     "@anycli/tslint": "^0.2.0",
     "@commitlint/cli": "^6.0.5",
