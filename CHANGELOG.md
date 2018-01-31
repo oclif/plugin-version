@@ -1,3 +1,11 @@
+<a name="0.1.18"></a>
+## [0.1.18](https://github.com/anycli/version/compare/eb3925513fc4c79a689ca741bca161ac25e1e6a4...v0.1.18) (2018-01-31)
+
+
+### Bug Fixes
+
+* updated command ([b97d352](https://github.com/anycli/version/commit/b97d352))
+
 <a name="0.1.17"></a>
 ## [0.1.17](https://github.com/anycli/version/compare/59156f63ac82a9e31c00ce7489c339a3f094ed78...v0.1.17) (2018-01-31)
 
