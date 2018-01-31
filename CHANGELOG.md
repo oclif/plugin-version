@@ -1,3 +1,11 @@
+<a name="0.1.14"></a>
+## [0.1.14](https://github.com/anycli/version/compare/13ab8aac7b7a5b4063edf24f34ed5956c816d658...v0.1.14) (2018-01-31)
+
+
+### Bug Fixes
+
+* anycli rename ([bc360cf](https://github.com/anycli/version/commit/bc360cf))
+
 <a name="0.1.13"></a>
 ## [0.1.13](https://github.com/dxcli/version/compare/36a7faf38dd1f8fe7817c6c7b18c528d9511623b...v0.1.13) (2018-01-29)
 
