@@ -1,7 +1,7 @@
 {
   "name": "@anycli/version",
   "description": "a anycli command that just shows the CLI version",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "author": "Jeff Dickey @jdxcode",
   "anycli": {
     "commands": "./lib/commands",
