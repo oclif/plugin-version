@@ -1,3 +1,11 @@
+<a name="0.1.19"></a>
+## [0.1.19](https://github.com/anycli/version/compare/b97d3525ee6fa2fd89846fc1989177f9096f379e...v0.1.19) (2018-02-01)
+
+
+### Bug Fixes
+
+* updated command ([8a2f219](https://github.com/anycli/version/commit/8a2f219))
+
 <a name="0.1.18"></a>
 ## [0.1.18](https://github.com/anycli/version/compare/eb3925513fc4c79a689ca741bca161ac25e1e6a4...v0.1.18) (2018-01-31)
 
