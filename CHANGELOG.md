@@ -1,3 +1,11 @@
+<a name="0.1.20"></a>
+## [0.1.20](https://github.com/anycli/plugin-version/compare/fcd0d6c0fb2a7c1ff2882451c8bec76d734b6e9a...v0.1.20) (2018-02-02)
+
+
+### Bug Fixes
+
+* ran generator ([9484277](https://github.com/anycli/plugin-version/commit/9484277))
+
 <a name="0.1.19"></a>
 ## [0.1.19](https://github.com/anycli/version/compare/b97d3525ee6fa2fd89846fc1989177f9096f379e...v0.1.19) (2018-02-01)
 
