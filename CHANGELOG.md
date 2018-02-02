@@ -1,3 +1,11 @@
+<a name="0.1.22"></a>
+## [0.1.22](https://github.com/anycli/plugin-version/compare/2203a5fb396ec00a53f10fc9fa7516245b4b75b8...v0.1.22) (2018-02-02)
+
+
+### Bug Fixes
+
+* fixed manifest location ([81ad2de](https://github.com/anycli/plugin-version/commit/81ad2de))
+
 <a name="0.1.21"></a>
 ## [0.1.21](https://github.com/anycli/plugin-version/compare/948427739fcb15375415515c320846e4a68e9e0b...v0.1.21) (2018-02-02)
 
