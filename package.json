@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@anycli/config": "^0.2.11",
-    "@anycli/engine": "^0.1.45",
+    "@anycli/engine": "^0.1.46",
     "@anycli/test": "^0.10.2",
     "@anycli/tslint": "^0.2.2",
     "@types/chai": "^4.1.2",
