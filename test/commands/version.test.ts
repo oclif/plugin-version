@@ -3,7 +3,7 @@ import {expect, test} from '@anycli/test'
 const pjson = require('../../package.json')
 
 describe('version', () => {
-  const stdout = `@anycli/version/${pjson.version} (${process.platform}-${process.arch}) node-${process.version}\n`
+  const stdout = `@anycli/plugin-version/${pjson.version} (${process.platform}-${process.arch}) node-${process.version}\n`
 
   test
   .stdout()
