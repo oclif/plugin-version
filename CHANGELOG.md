@@ -1,3 +1,11 @@
+<a name="0.1.29"></a>
+## [0.1.29](https://github.com/anycli/plugin-version/compare/082699f73f6fb582ebfdfed9ef55de223d0bf568...v0.1.29) (2018-02-02)
+
+
+### Bug Fixes
+
+* clear cache ([c762f26](https://github.com/anycli/plugin-version/commit/c762f26))
+
 <a name="0.1.28"></a>
 ## [0.1.28](https://github.com/anycli/plugin-version/compare/1635e114e0f0f416dca4a4353c6e59f0f33b98b3...v0.1.28) (2018-02-02)
 
