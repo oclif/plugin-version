@@ -39,6 +39,7 @@
     "node": ">=8.0.0"
   },
   "files": [
+    ".anycli.manifest.json",
     "/lib"
   ],
   "homepage": "https://github.com/anycli/plugin-version",
@@ -52,7 +53,7 @@
     "build": "rm -rf lib && tsc",
     "lint": "concurrently -p command \"eslint .\" \"tsc -p test --noEmit\" \"tslint -p test\"",
     "posttest": "yarn run lint",
-    "prepublishOnly": "yarn run build && anycli-dev manifest > lib/.anycli.manifest.json",
+    "prepublishOnly": "yarn run build && anycli-dev manifest > .anycli.manifest.json",
     "test": "mocha --forbid-only \"test/**/*.test.ts\""
   },
   "types": "lib/index.d.ts"
