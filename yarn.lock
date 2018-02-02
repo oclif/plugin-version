@@ -23,9 +23,9 @@
     lodash "^4.17.4"
     read-pkg "^3.0.0"
 
-"@anycli/dev-cli@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@anycli/dev-cli/-/dev-cli-0.1.1.tgz#df47fc29780950436766a72dc88a5a975d7ab42d"
+"@anycli/dev-cli@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@anycli/dev-cli/-/dev-cli-0.1.2.tgz#61dfe4bf7f038425ace0ef903828c6e169e434fa"
   dependencies:
     "@anycli/command" "^0.3.7"
     "@anycli/config" "^0.3.0"
@@ -34,6 +34,7 @@
     "@anycli/plugin-not-found" "^0.1.10"
     "@anycli/plugin-version" "^0.1.20"
     cli-ux "^3.3.13"
+    fs-extra "^5.0.0"
 
 "@anycli/engine@^0.3.0":
   version "0.3.0"
