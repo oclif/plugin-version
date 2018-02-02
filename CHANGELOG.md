@@ -1,3 +1,11 @@
+<a name="0.1.21"></a>
+## [0.1.21](https://github.com/anycli/plugin-version/compare/948427739fcb15375415515c320846e4a68e9e0b...v0.1.21) (2018-02-02)
+
+
+### Bug Fixes
+
+* add plugin manifest ([2203a5f](https://github.com/anycli/plugin-version/commit/2203a5f))
+
 <a name="0.1.20"></a>
 ## [0.1.20](https://github.com/anycli/plugin-version/compare/fcd0d6c0fb2a7c1ff2882451c8bec76d734b6e9a...v0.1.20) (2018-02-02)
 
