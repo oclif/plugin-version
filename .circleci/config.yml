@@ -48,7 +48,7 @@ jobs:
 
 workflows:
   version: 2
-  "@anycli/version-plugin":
+  "@anycli/plugin-version":
     jobs:
       - node-latest
       - node-8
