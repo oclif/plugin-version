@@ -1,3 +1,11 @@
+<a name="0.1.34"></a>
+## [0.1.34](https://github.com/anycli/plugin-version/compare/cc4973888155762576863aed3cccec98c8a779e4...v0.1.34) (2018-02-03)
+
+
+### Bug Fixes
+
+* remove hook in favor of flag ([13e347b](https://github.com/anycli/plugin-version/commit/13e347b))
+
 <a name="0.1.33"></a>
 ## [0.1.33](https://github.com/anycli/plugin-version/compare/f600072af0ccf146f3b53aad58f701f82235521e...v0.1.33) (2018-02-03)
 
