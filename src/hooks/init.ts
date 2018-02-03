@@ -1,11 +1,11 @@
-import {Hooks, IHook} from '@anycli/config'
+import {Hook} from '@anycli/config'
 import cli from 'cli-ux'
 
 import Version from '../commands/version'
 
-const hook: IHook<Hooks['init']> = async opts => {
+const hook: Hook<'init'> = async opts => {
   if (['-v', '--version'].includes(opts.id)) {
-    await Version.run([], opts)
+    await Version.run([], opts.config)
     cli.exit(0)
   }
 }
