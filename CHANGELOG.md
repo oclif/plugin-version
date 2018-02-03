@@ -1,3 +1,11 @@
+<a name="0.1.31"></a>
+## [0.1.31](https://github.com/anycli/plugin-version/compare/1ebf772d2e592f3cf2f4cf4b939b0cfccf1203ac...v0.1.31) (2018-02-03)
+
+
+### Bug Fixes
+
+* updated config ([cfb1acf](https://github.com/anycli/plugin-version/commit/cfb1acf))
+
 <a name="0.1.30"></a>
 ## [0.1.30](https://github.com/anycli/plugin-version/compare/c762f2694487ceff0221e6181458fce7609aa5f5...v0.1.30) (2018-02-02)
 
