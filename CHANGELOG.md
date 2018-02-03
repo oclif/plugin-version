@@ -1,3 +1,11 @@
+<a name="0.1.32"></a>
+## [0.1.32](https://github.com/anycli/plugin-version/compare/cfb1acffbfcf1d727362d0f9c6ee4b8d688e470f...v0.1.32) (2018-02-03)
+
+
+### Bug Fixes
+
+* bump deps ([f600072](https://github.com/anycli/plugin-version/commit/f600072))
+
 <a name="0.1.31"></a>
 ## [0.1.31](https://github.com/anycli/plugin-version/compare/1ebf772d2e592f3cf2f4cf4b939b0cfccf1203ac...v0.1.31) (2018-02-03)
 
