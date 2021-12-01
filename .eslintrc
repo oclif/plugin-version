@@ -1,3 +1,8 @@
 {
-  "extends": "anycli"
+  "extends": [
+    "oclif",
+    "oclif-typescript"
+  ],
+  "rules": {
+  }
 }
