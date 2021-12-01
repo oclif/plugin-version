@@ -1463,7 +1463,7 @@ cli-ux@^5.6.3:
     supports-hyperlinks "^2.1.0"
     tslib "^2.0.0"
 
-cli-ux@^6, cli-ux@^6.0.1:
+cli-ux@^6.0.1:
   version "6.0.1"
   resolved "https://registry.npmjs.org/cli-ux/-/cli-ux-6.0.1.tgz#e059b3e2cedbb4ccf9c4b534fd8a4578e8c45201"
   integrity sha512-V2789lD5swG5kwoKO0JUMxhjVEjAFdz7ufTvGE6wYUHV749eQPZm93dhLqkzM7HAM0tHZsY+j54OEcw+Qr1vGg==

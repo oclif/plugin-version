@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/oclif/plugin-version/compare/v1.0.0...v1.0.1) (2021-12-01)
+
+
+### Bug Fixes
+
+* remove cli-ux dependency ([7d0930e](https://github.com/oclif/plugin-version/commit/7d0930ee98353ba99b899c59b6b6ff56a0467d6b))
+
 ## [1.0.0](https://github.com/oclif/plugin-version/compare/v0.1.34...v1.0.0) (2021-12-01)
 
 
