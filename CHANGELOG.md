@@ -1,3 +1,14 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.0.0](https://github.com/oclif/plugin-version/compare/v0.1.34...v1.0.0) (2021-12-01)
+
+
+### Features
+
+* revive plugin-version ([3f2e733](https://github.com/oclif/plugin-version/commit/3f2e7332686547fbd92428b90931cd436a25e748))
+
 <a name="0.1.34"></a>
 ## [0.1.34](https://github.com/anycli/plugin-version/compare/cc4973888155762576863aed3cccec98c8a779e4...v0.1.34) (2018-02-03)
 
