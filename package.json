@@ -1,11 +1,11 @@
 {
   "name": "@oclif/plugin-version",
   "description": "A command that shows the CLI version",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Salesforce",
   "bugs": "https://github.com/oclif/plugin-version/issues",
   "dependencies": {
-    "@oclif/core": "^1.0.4"
+    "@oclif/core": "^1.0.7"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^12.1.4",
