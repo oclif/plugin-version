@@ -9,3 +9,6 @@ updates:
     open-pull-requests-limit: 100
     pull-request-branch-name:
       separator: "-"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
