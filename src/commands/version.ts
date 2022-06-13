@@ -1,5 +1,5 @@
 import {Command, Flags} from '@oclif/core'
-import {type as osType, release as osRelease} from 'node:os'
+import {EOL, type as osType, release as osRelease} from 'node:os'
 
 export default class Version extends Command {
   public static flags = {
@@ -11,7 +11,7 @@ export default class Version extends Command {
 
   async run(): Promise<void> {
     const {flags} = await this.parse(Version)
-    let output = `${this.config.userAgent} \n`
+    let output = `${this.config.userAgent}${EOL}`
 
     if (flags.verbose) {
       const versions = this.config.userAgent.split(' ')
@@ -19,21 +19,21 @@ export default class Version extends Command {
       const architecture: string = versions[1]
       const nodeVersion: string = versions[2]
 
-      const pluginVersions: string = this.config.plugins.reduce((accumulator, plugin) => {
-        accumulator += `\n\t${plugin.name}@${plugin.version} (${plugin.type})`
-        return accumulator
-      }, '')
+      let pluginVersions = ''
+      for (const plugin of this.config.plugins) {
+        pluginVersions += `${EOL}\t${plugin.name}@${plugin.version} (${plugin.type})`
+      }
 
       const osVersion = `${osType()} ${osRelease()}`
 
-      output = ` CLI Version : \n\t${cliVersion}
-\n Architecture: \n\t${architecture}
-\n Node Version : \n\t${nodeVersion}
-\n Plugin Version: ${pluginVersions}
-\n OS and Version: \n\t${osVersion}
+      output = ` CLI Version : ${EOL}\t${cliVersion}
+${EOL} Architecture: ${EOL}\t${architecture}
+${EOL} Node Version : ${EOL}\t${nodeVersion}
+${EOL} Plugin Version: ${pluginVersions}
+${EOL} OS and Version: ${EOL}\t${osVersion}
 `
     }
 
-    this.log(output)
+    process.stdout.write(output)
   }
 }
