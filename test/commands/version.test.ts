@@ -1,10 +1,11 @@
 import {expect, test} from '@oclif/test'
+import {EOL} from 'node:os'
 
 // eslint-disable-next-line unicorn/prefer-module
 const pjson = require('../../package.json')
 
 describe('version', () => {
-  const stdout = `@oclif/plugin-version/${pjson.version} ${process.platform}-${process.arch} node-${process.version}\n`
+  const stdout = `@oclif/plugin-version/${pjson.version} ${process.platform}-${process.arch} node-${process.version}${EOL}`
 
   test
   .stdout()
