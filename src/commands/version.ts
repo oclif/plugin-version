@@ -1,7 +1,18 @@
-import {Command, Flags} from '@oclif/core'
+import {CliUx, Command, Flags} from '@oclif/core'
 import {EOL, type as osType, release as osRelease} from 'node:os'
+import {exec} from 'shelljs'
+
+interface VersionDetail {
+  cliVersion: string;
+  architecture: string;
+  nodeVersion: string;
+  pluginVersions?: string[];
+  osVersion?: string;
+}
 
 export default class Version extends Command {
+  static enableJsonFlag = true
+
   public static flags = {
     verbose: Flags.boolean({
       summary: 'Show additional information about the CLI.',
@@ -9,31 +20,40 @@ export default class Version extends Command {
     }),
   }
 
-  async run(): Promise<void> {
+  async run(): Promise<VersionDetail> {
     const {flags} = await this.parse(Version)
-    let output = `${this.config.userAgent}${EOL}`
+
+    const versions = this.config.userAgent.split(' ')
+    const cliVersion = versions[0]
+    const architecture = versions[1]
+    const nodeVersion = versions[2]
+
+    const versionDetail:VersionDetail = {cliVersion, architecture, nodeVersion}
+    let output = `${cliVersion} ${architecture} ${nodeVersion}`
 
     if (flags.verbose) {
-      const versions = this.config.userAgent.split(' ')
-      const cliVersion: string = versions[0]
-      const architecture: string = versions[1]
-      const nodeVersion: string = versions[2]
-
-      let pluginVersions = ''
-      for (const plugin of this.config.plugins) {
-        pluginVersions += `${EOL}\t${plugin.name}@${plugin.version} (${plugin.type})`
-      }
-
+      const pluginVersion: string = exec('./bin/run plugins --core', {
+        silent: true,
+      }).toString()
+      const pluginVersions: string[] = pluginVersion.split('\n')
+      pluginVersions.pop()
       const osVersion = `${osType()} ${osRelease()}`
 
+      versionDetail.pluginVersions = pluginVersions
+      versionDetail.osVersion = osVersion
+
       output = ` CLI Version : ${EOL}\t${cliVersion}
-${EOL} Architecture: ${EOL}\t${architecture}
-${EOL} Node Version : ${EOL}\t${nodeVersion}
-${EOL} Plugin Version: ${pluginVersions}
-${EOL} OS and Version: ${EOL}\t${osVersion}
-`
+      ${EOL} Architecture: ${EOL}\t${architecture}
+      ${EOL} Node Version : ${EOL}\t${nodeVersion}
+      ${EOL} Plugin Version: ${pluginVersions.join('\n\t')}
+      ${EOL} OS and Version: ${EOL}\t${osVersion}
+      `
     }
 
-    process.stdout.write(output)
+    if (!flags.json) {
+      CliUx.ux.log(output)
+    }
+
+    return versionDetail
   }
 }
