@@ -22,10 +22,7 @@ export default class Version extends Command {
   async run(): Promise<VersionDetail> {
     const {flags} = await this.parse(Version)
 
-    const versions = this.config.userAgent.split(' ')
-    const cliVersion = versions[0]
-    const architecture = versions[1]
-    const nodeVersion = versions[2]
+    const [cliVersion, architecture, nodeVersion] = this.config.userAgent.split(' ')
 
     const versionDetail:VersionDetail = {cliVersion, architecture, nodeVersion}
     let output = `${this.config.userAgent}`
