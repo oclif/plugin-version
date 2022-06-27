@@ -32,9 +32,9 @@ export default class Version extends Command {
 
     if (flags.verbose) {
       const pluginVersions = []
-      for (const plugin of this.config.plugins) {
+      for (const plugin of this.config.plugins.sort((a, b) => a.name > b.name ? 1 : -1)) {
         if (this.config.name !== plugin.name) {
-          pluginVersions.push(`${plugin.name} ${plugin.version} (${plugin.type})`)
+          pluginVersions.push(`${this.getFriendlyName(plugin.name)} ${plugin.version} (${plugin.type}) ${plugin.type === 'link' ? plugin.root : ''}`.trim())
         }
       }
 
@@ -63,5 +63,13 @@ export default class Version extends Command {
     this.log(output)
 
     return versionDetail
+  }
+
+  private getFriendlyName(name: string): string {
+    const scope = this.config.pjson.oclif.scope
+    if (!scope) return name
+    const match = name.match(`@${scope}/plugin-(.+)`)
+    if (!match) return name
+    return match[1]
   }
 }
