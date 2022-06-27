@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/oclif/plugin-version/compare/v1.1.0...v1.1.1) (2022-06-27)
+
+
+### Bug Fixes
+
+* add --json flag ([47d7105](https://github.com/oclif/plugin-version/commit/47d7105a4bd36f8bed8d4772485c4f5eef0fdacd))
+* suggestions on how to improve PR [#70](https://github.com/oclif/plugin-version/issues/70) ([4023f70](https://github.com/oclif/plugin-version/commit/4023f708204ca940b905cf98e43c0fce72a97307))
+
 ## [1.1.0](https://github.com/oclif/plugin-version/compare/v1.0.4...v1.1.0) (2022-06-13)
 
 
