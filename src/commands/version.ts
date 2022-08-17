@@ -1,12 +1,14 @@
 import {Command, Flags} from '@oclif/core'
 import {EOL, type as osType, release as osRelease} from 'node:os'
 
-interface VersionDetail {
+export interface VersionDetail {
   cliVersion: string;
   architecture: string;
   nodeVersion: string;
   pluginVersions?: string[];
   osVersion?: string;
+  shell?: string;
+  rootPath?: string;
 }
 
 export default class Version extends Command {
@@ -39,6 +41,8 @@ export default class Version extends Command {
 
       versionDetail.pluginVersions = pluginVersions
       versionDetail.osVersion = osVersion
+      versionDetail.shell = this.config.shell;
+      versionDetail.rootPath = this.config.root;
 
       output = ` CLI Version:
 \t${cliVersion}
@@ -54,6 +58,12 @@ export default class Version extends Command {
 
  OS and Version:
 \t${osVersion}
+
+ Shell:
+\t${versionDetail.shell}
+
+ Root Path:
+\t${versionDetail.rootPath}
 `
     }
 
