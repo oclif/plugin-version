@@ -41,8 +41,8 @@ export default class Version extends Command {
 
       versionDetail.pluginVersions = pluginVersions
       versionDetail.osVersion = osVersion
-      versionDetail.shell = this.config.shell;
-      versionDetail.rootPath = this.config.root;
+      versionDetail.shell = this.config.shell
+      versionDetail.rootPath = this.config.root
 
       output = ` CLI Version:
 \t${cliVersion}

@@ -1,11 +1,11 @@
 import {expect, test} from '@oclif/test'
 import {type as osType, release as osRelease, userInfo as osUserInfo} from 'node:os'
-import {sep} from 'path';
+import {sep} from 'node:path'
 
 // eslint-disable-next-line unicorn/prefer-module
 const pjson = require('../../package.json')
 
-const getShell = () => osUserInfo().shell?.split(sep)?.pop();
+const getShell = () => osUserInfo().shell?.split(sep)?.pop()
 
 describe('version', () => {
   const stdout = `@oclif/plugin-version/${pjson.version} ${process.platform}-${process.arch} node-${process.version}
@@ -68,7 +68,7 @@ describe('version', () => {
       osVersion: `${osType()} ${osRelease()}`,
       pluginVersions: [],
       shell: getShell(),
-      rootPath: process.cwd()
+      rootPath: process.cwd(),
     })
   })
 })

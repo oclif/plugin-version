@@ -1,1 +1,1 @@
-export { VersionDetail, default } from './commands/version';
+export {VersionDetail, default} from './commands/version'
