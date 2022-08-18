@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/oclif/plugin-version/compare/v1.1.1...v1.1.2) (2022-08-18)
+
+
+### Bug Fixes
+
+* bump some versions ([c2d19d6](https://github.com/oclif/plugin-version/commit/c2d19d68bbb755fd844efff3ab9edb1469cd222b))
+* export the Version command and the VersionDetail interface. Enhance the verbose details to include the shell and root path. ([fcf6aaf](https://github.com/oclif/plugin-version/commit/fcf6aafdfb7336e982d246753a0f2f72c5383629))
+* relax the unit test expecations ([a6c913b](https://github.com/oclif/plugin-version/commit/a6c913b523962b95d1b9fc121be2f2d1a575c55f))
+
 ### [1.1.1](https://github.com/oclif/plugin-version/compare/v1.1.0...v1.1.1) (2022-06-27)
 
 
