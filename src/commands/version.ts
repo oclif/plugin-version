@@ -1,5 +1,6 @@
 import {Command, Flags} from '@oclif/core'
-import {EOL, type as osType, release as osRelease} from 'node:os'
+// eslint-disable-next-line unicorn/prefer-node-protocol
+import {EOL, type as osType, release as osRelease} from 'os'
 
 export interface VersionDetail {
   cliVersion: string;
