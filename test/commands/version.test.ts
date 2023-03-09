@@ -41,11 +41,17 @@ describe('version', () => {
   .stdout()
   .command(['version', '--json'])
   .end('runs version --json', output => {
-    expect(JSON.parse(output.stdout)).to.deep.equal({
-      cliVersion: `@oclif/plugin-version/${pjson.version}`,
-      architecture: `${process.platform}-${process.arch}`,
-      nodeVersion: `node-${process.version}`,
-    })
+    const json = JSON.parse(output.stdout)
+    expect(json).to.have.keys([
+      'cliVersion',
+      'architecture',
+      'nodeVersion',
+      'osVersion',
+      'pluginVersions',
+      'rootPath',
+      'shell',
+    ])
+    expect(json.pluginVersions).to.have.keys(['@oclif/plugin-version', '@oclif/plugin-help'])
   })
 
   test
