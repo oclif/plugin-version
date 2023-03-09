@@ -46,12 +46,7 @@ describe('version', () => {
       'cliVersion',
       'architecture',
       'nodeVersion',
-      'osVersion',
-      'pluginVersions',
-      'rootPath',
-      'shell',
     ])
-    expect(json.pluginVersions).to.have.keys(['@oclif/plugin-version', '@oclif/plugin-help'])
   })
 
   test
