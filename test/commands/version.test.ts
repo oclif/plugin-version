@@ -61,7 +61,7 @@ describe('version', () => {
     expect(json).to.have.property('pluginVersions')
     expect(json.pluginVersions).to.an('array')
     expect(json).to.have.property('shell')
-    expect(json.shell).to.be.equal(getShell())
+    expect(json.shell).to.be.equal(getShell(), JSON.stringify(osUserInfo()))
     expect(json).to.have.property('rootPath', process.cwd())
   })
 })
