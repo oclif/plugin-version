@@ -2,6 +2,10 @@ import {Command, Flags, Interfaces} from '@oclif/core'
 // eslint-disable-next-line unicorn/prefer-node-protocol
 import {EOL} from 'os'
 
+export type VersionDetail = Omit<Interfaces.VersionDetails, 'pluginVersions'> & {
+  pluginVersions?: string[];
+}
+
 export default class Version extends Command {
   static enableJsonFlag = true
 
@@ -12,39 +16,47 @@ export default class Version extends Command {
     }),
   }
 
-  async run(): Promise<Partial<Interfaces.VersionDetails>> {
+  async run(): Promise<Partial<VersionDetail>> {
     const {flags} = await this.parse(Version)
+    const {pluginVersions, ...theRest} = this.config.versionDetails
+    const versionDetail: VersionDetail = {...theRest}
 
     let output = `${this.config.userAgent}`
     if (flags.verbose) {
+      versionDetail.pluginVersions = this.formatPlugins(pluginVersions ?? {})
+
       output = ` CLI Version:
-\t${this.config.versionDetails.cliVersion}
+\t${versionDetail.cliVersion}
 
  Architecture:
-\t${this.config.versionDetails.architecture}
+\t${versionDetail.architecture}
 
  Node Version:
-\t${this.config.versionDetails.nodeVersion}
+\t${versionDetail.nodeVersion}
 
  Plugin Version:
-\t${flags.verbose ? this.formatPlugins(this.config.versionDetails.pluginVersions ?? {}).join(EOL + '\t') : ''}
+\t${flags.verbose ? (versionDetail.pluginVersions ?? []).join(EOL + '\t') : ''}
 
  OS and Version:
-\t${this.config.versionDetails.osVersion}
+\t${versionDetail.osVersion}
 
  Shell:
-\t${this.config.versionDetails.shell}
+\t${versionDetail.shell}
 
  Root Path:
-\t${this.config.versionDetails.rootPath}
+\t${versionDetail.rootPath}
 `
     }
 
     this.log(output)
 
     return flags.verbose ?
-      this.config.versionDetails :
-      {cliVersion: this.config.versionDetails.cliVersion, architecture: this.config.versionDetails.architecture, nodeVersion: this.config.versionDetails.nodeVersion}
+      versionDetail :
+      {
+        cliVersion: versionDetail.cliVersion,
+        architecture: versionDetail.architecture,
+        nodeVersion: versionDetail.nodeVersion,
+      }
   }
 
   private formatPlugins(plugins: Record<string, Interfaces.PluginVersionDetail>): string[] {

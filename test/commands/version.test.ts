@@ -59,6 +59,7 @@ describe('version', () => {
     expect(json).to.have.property('nodeVersion', `node-${process.version}`)
     expect(json).to.have.property('osVersion', `${osType()} ${osRelease()}`)
     expect(json).to.have.property('pluginVersions')
+    expect(json.pluginVersions).to.an('array')
     expect(json).to.have.property('shell', getShell())
     expect(json).to.have.property('rootPath', process.cwd())
   })
