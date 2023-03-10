@@ -22,19 +22,19 @@ describe('version', () => {
   .stdout()
   .command(['version', '--verbose'])
   .end('runs version --verbose', output => {
-    expect(output.stdout).to.contain(` CLI Version:
-\t@oclif/plugin-version/${pjson.version}`)
-    expect(output.stdout).to.contain(` Architecture:
-\t${process.platform}-${process.arch}`)
-    expect(output.stdout).to.contain(` Node Version:
-\tnode-${process.version}`)
+    expect(output.stdout).to.contain(' CLI Version:')
+    expect(output.stdout).to.contain(`\t@oclif/plugin-version/${pjson.version}`)
+    expect(output.stdout).to.contain(' Architecture:')
+    expect(output.stdout).to.contain(`\t${process.platform}-${process.arch}`)
+    expect(output.stdout).to.contain(' Node Version:')
+    expect(output.stdout).to.contain(`\tnode-${process.version}`)
     expect(output.stdout).to.contain(' Plugin Version:')
-    expect(output.stdout).to.contain(` OS and Version:
-\t${osType()} ${osRelease()}`)
-    expect(output.stdout).to.contain(` Shell:
-\t${getShell()}`)
-    expect(output.stdout).to.contain(` Root Path:
-\t${process.cwd()}`)
+    expect(output.stdout).to.contain(' OS and Version:')
+    expect(output.stdout).to.contain(`\t${osType()} ${osRelease()}`)
+    expect(output.stdout).to.contain(' Shell:')
+    expect(output.stdout).to.contain(`\t${getShell()}`)
+    expect(output.stdout).to.contain(' Root Path:')
+    expect(output.stdout).to.contain(`\t${process.cwd()}`)
   })
 
   test
@@ -60,6 +60,7 @@ describe('version', () => {
     expect(json).to.have.property('osVersion', `${osType()} ${osRelease()}`)
     expect(json).to.have.property('pluginVersions')
     expect(json.pluginVersions).to.an('array')
+    console.log(`shell: ${getShell()}`)
     expect(json).to.have.property('shell', getShell())
     expect(json).to.have.property('rootPath', process.cwd())
   })
