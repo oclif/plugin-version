@@ -24,6 +24,7 @@ export default class Version extends Command {
     let output = `${this.config.userAgent}`
     if (flags.verbose) {
       versionDetail.pluginVersions = this.formatPlugins(pluginVersions ?? {})
+      versionDetail.shell ??= 'unknown'
 
       output = ` CLI Version:
 \t${versionDetail.cliVersion}

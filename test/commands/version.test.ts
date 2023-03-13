@@ -61,7 +61,8 @@ describe('version', () => {
     expect(json).to.have.property('pluginVersions')
     expect(json.pluginVersions).to.an('array')
     expect(json).to.have.property('shell')
-    expect(json.shell).to.be.equal(getShell(), JSON.stringify(osUserInfo()))
+    expect(json.shell).to.be.equal(getShell(), `json.shell: ${json.shell} getShell(): ${getShell()}`)
     expect(json).to.have.property('rootPath', process.cwd())
   })
 })
+// {"uid":1001,"gid":123,"username":"runner","homedir":"/home/runner","shell":"/bin/bash"}
