@@ -16,7 +16,7 @@ export default class Version extends Command {
     }),
   }
 
-  async run(): Promise<Partial<VersionDetail>> {
+  async run(): Promise<VersionDetail> {
     const {flags} = await this.parse(Version)
     const {pluginVersions, ...theRest} = this.config.versionDetails
     const versionDetail: VersionDetail = {...theRest}
