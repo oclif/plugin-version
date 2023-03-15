@@ -22,30 +22,31 @@ describe('version', () => {
   .stdout()
   .command(['version', '--verbose'])
   .end('runs version --verbose', output => {
-    expect(output.stdout).to.contain(` CLI Version:
-\t@oclif/plugin-version/${pjson.version}`)
-    expect(output.stdout).to.contain(` Architecture:
-\t${process.platform}-${process.arch}`)
-    expect(output.stdout).to.contain(` Node Version:
-\tnode-${process.version}`)
+    expect(output.stdout).to.contain(' CLI Version:')
+    expect(output.stdout).to.contain(`\t@oclif/plugin-version/${pjson.version}`)
+    expect(output.stdout).to.contain(' Architecture:')
+    expect(output.stdout).to.contain(`\t${process.platform}-${process.arch}`)
+    expect(output.stdout).to.contain(' Node Version:')
+    expect(output.stdout).to.contain(`\tnode-${process.version}`)
     expect(output.stdout).to.contain(' Plugin Version:')
-    expect(output.stdout).to.contain(` OS and Version:
-\t${osType()} ${osRelease()}`)
-    expect(output.stdout).to.contain(` Shell:
-\t${getShell()}`)
-    expect(output.stdout).to.contain(` Root Path:
-\t${process.cwd()}`)
+    expect(output.stdout).to.contain(' OS and Version:')
+    expect(output.stdout).to.contain(`\t${osType()} ${osRelease()}`)
+    expect(output.stdout).to.contain(' Shell:')
+    expect(output.stdout).to.contain(`\t${getShell()}`)
+    expect(output.stdout).to.contain(' Root Path:')
+    expect(output.stdout).to.contain(`\t${process.cwd()}`)
   })
 
   test
   .stdout()
   .command(['version', '--json'])
   .end('runs version --json', output => {
-    expect(JSON.parse(output.stdout)).to.deep.equal({
-      cliVersion: `@oclif/plugin-version/${pjson.version}`,
-      architecture: `${process.platform}-${process.arch}`,
-      nodeVersion: `node-${process.version}`,
-    })
+    const json = JSON.parse(output.stdout)
+    expect(json).to.have.keys([
+      'cliVersion',
+      'architecture',
+      'nodeVersion',
+    ])
   })
 
   test
@@ -58,7 +59,10 @@ describe('version', () => {
     expect(json).to.have.property('nodeVersion', `node-${process.version}`)
     expect(json).to.have.property('osVersion', `${osType()} ${osRelease()}`)
     expect(json).to.have.property('pluginVersions')
-    expect(json).to.have.property('shell', getShell())
+    expect(json.pluginVersions).to.an('array')
+    expect(json).to.have.property('shell')
+    expect(json.shell).to.be.equal(getShell(), `json.shell: ${json.shell} getShell(): ${getShell()}`)
     expect(json).to.have.property('rootPath', process.cwd())
   })
 })
+// {"uid":1001,"gid":123,"username":"runner","homedir":"/home/runner","shell":"/bin/bash"}

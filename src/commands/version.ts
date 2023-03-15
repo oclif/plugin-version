@@ -1,15 +1,9 @@
-import {Command, Flags} from '@oclif/core'
+import {Command, Flags, Interfaces} from '@oclif/core'
 // eslint-disable-next-line unicorn/prefer-node-protocol
-import {EOL, type as osType, release as osRelease} from 'os'
+import {EOL} from 'os'
 
-export interface VersionDetail {
-  cliVersion: string;
-  architecture: string;
-  nodeVersion: string;
+export type VersionDetail = Omit<Interfaces.VersionDetails, 'pluginVersions'> & {
   pluginVersions?: string[];
-  osVersion?: string;
-  shell?: string;
-  rootPath?: string;
 }
 
 export default class Version extends Command {
@@ -24,41 +18,28 @@ export default class Version extends Command {
 
   async run(): Promise<VersionDetail> {
     const {flags} = await this.parse(Version)
+    const {pluginVersions, ...theRest} = this.config.versionDetails
+    const versionDetail: VersionDetail = {...theRest}
 
-    const [cliVersion, architecture, nodeVersion] = this.config.userAgent.split(' ')
-
-    const versionDetail:VersionDetail = {cliVersion, architecture, nodeVersion}
     let output = `${this.config.userAgent}`
-
     if (flags.verbose) {
-      const pluginVersions = []
-      for (const plugin of this.config.plugins.sort((a, b) => a.name > b.name ? 1 : -1)) {
-        if (this.config.name !== plugin.name) {
-          pluginVersions.push(`${this.getFriendlyName(plugin.name)} ${plugin.version} (${plugin.type}) ${plugin.type === 'link' ? plugin.root : ''}`.trim())
-        }
-      }
-
-      const osVersion = `${osType()} ${osRelease()}`
-
-      versionDetail.pluginVersions = pluginVersions
-      versionDetail.osVersion = osVersion
-      versionDetail.shell = this.config.shell
-      versionDetail.rootPath = this.config.root
+      versionDetail.pluginVersions = this.formatPlugins(pluginVersions ?? {})
+      versionDetail.shell ??= 'unknown'
 
       output = ` CLI Version:
-\t${cliVersion}
+\t${versionDetail.cliVersion}
 
  Architecture:
-\t${architecture}
+\t${versionDetail.architecture}
 
  Node Version:
-\t${nodeVersion}
+\t${versionDetail.nodeVersion}
 
  Plugin Version:
-\t${pluginVersions.join(`${EOL}\t`)}
+\t${flags.verbose ? (versionDetail.pluginVersions ?? []).join(EOL + '\t') : ''}
 
  OS and Version:
-\t${osVersion}
+\t${versionDetail.osVersion}
 
  Shell:
 \t${versionDetail.shell}
@@ -70,7 +51,24 @@ export default class Version extends Command {
 
     this.log(output)
 
-    return versionDetail
+    return flags.verbose ?
+      versionDetail :
+      {
+        cliVersion: versionDetail.cliVersion,
+        architecture: versionDetail.architecture,
+        nodeVersion: versionDetail.nodeVersion,
+      }
+  }
+
+  private formatPlugins(plugins: Record<string, Interfaces.PluginVersionDetail>): string[] {
+    return Object.entries(plugins)
+    .map(([name, plugin]) => ({name, ...plugin}))
+    .sort((a, b) => (a.name > b.name ? 1 : -1))
+    .map(plugin =>
+      `${this.getFriendlyName(plugin.name)} ${plugin.version} (${plugin.type}) ${
+        plugin.type === 'link' ? plugin.root : ''
+      }`.trim(),
+    )
   }
 
   private getFriendlyName(name: string): string {
