@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^12.1.4",
-    "@oclif/plugin-help": "5.2.10",
+    "@oclif/plugin-help": "5.2.11",
     "@oclif/test": "^2.3.25",
     "@types/chai": "^4.3.5",
     "@types/mocha": "^8.0.0",
