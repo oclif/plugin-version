@@ -1,3 +1,9 @@
+## [2.0.1](https://github.com/oclif/plugin-version/compare/1.3.11...2.0.1) (2023-10-11)
+
+### Bug Fixes
+
+- force 2.0.0 release ([6f14192](https://github.com/oclif/plugin-version/commit/6f14192f8bf609be7b423275d2b264f692a80a16))
+
 ## [1.3.11](https://github.com/oclif/plugin-version/compare/1.3.10...1.3.11) (2023-10-11)
 
 ## [1.3.10](https://github.com/oclif/plugin-version/compare/1.3.9...1.3.10) (2023-09-03)
