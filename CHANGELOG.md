@@ -1,3 +1,9 @@
+## [2.0.5](https://github.com/oclif/plugin-version/compare/2.0.4...2.0.5) (2023-11-04)
+
+### Bug Fixes
+
+- **deps:** bump @oclif/core from 3.9.1 to 3.10.1 ([#290](https://github.com/oclif/plugin-version/issues/290)) ([9738254](https://github.com/oclif/plugin-version/commit/973825484e0967169ac4939bdfa9374b963cecea))
+
 ## [2.0.4](https://github.com/oclif/plugin-version/compare/2.0.3...2.0.4) (2023-10-28)
 
 ### Bug Fixes
