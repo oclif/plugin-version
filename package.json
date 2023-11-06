@@ -1,11 +1,11 @@
 {
   "name": "@oclif/plugin-version",
   "description": "A command that shows the CLI version",
-  "version": "2.0.4",
+  "version": "2.0.6",
   "author": "Salesforce",
   "bugs": "https://github.com/oclif/plugin-version/issues",
   "dependencies": {
-    "@oclif/core": "^3.9.1"
+    "@oclif/core": "^3.10.1"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.8.1",
@@ -17,7 +17,7 @@
     "@types/node": "^18",
     "chai": "^4.3.10",
     "commitlint": "^17.8.1",
-    "eslint": "^8.52.0",
+    "eslint": "^8.53.0",
     "eslint-config-oclif": "^5",
     "eslint-config-oclif-typescript": "^3",
     "eslint-config-prettier": "^9.0.0",
