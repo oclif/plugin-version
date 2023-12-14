@@ -36,7 +36,6 @@
   },
   "files": [
     "oclif.manifest.json",
-    "oclif.lock",
     "/lib",
     "npm-shrinkwrap.json"
   ],
@@ -55,15 +54,16 @@
   "repository": "oclif/plugin-version",
   "scripts": {
     "build": "shx rm -rf lib && tsc",
-    "clean": "shx rm -f oclif.manifest.json oclif.lock",
-    "commitlint": "commitlint",
+    "clean": "shx rm -f oclif.manifest.json",
+    "commitlint": "commitlint --edit $1",
     "lint": "eslint . --ext .ts",
-    "postpublish": "yarn run clean",
-    "posttest": "yarn lint",
-    "prepare": "husky install && yarn build",
-    "prepublishOnly": "yarn run build && oclif lock && oclif manifest . && oclif readme",
-    "pretest": "yarn build --noEmit && tsc -p test --noEmit",
-    "preversion": "yarn run clean",
+    "lint-staged": "lint-staged",
+    "postpublish": "npm run clean",
+    "posttest": "npm run lint",
+    "prepare": "husky install && npm run build",
+    "prepublishOnly": "npm run build && oclif manifest . && oclif readme",
+    "pretest": "npm run build --noEmit && tsc -p test --noEmit",
+    "preversion": "npm run clean",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif readme && git add README.md"
   },
