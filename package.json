@@ -37,7 +37,8 @@
   "files": [
     "oclif.manifest.json",
     "oclif.lock",
-    "/lib"
+    "/lib",
+    "npm-shrinkwrap.json"
   ],
   "homepage": "https://github.com/oclif/plugin-version",
   "keywords": [
