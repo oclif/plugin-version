@@ -2597,9 +2597,9 @@ external-editor@^3.0.3:
     tmp "^0.0.33"
 
 fancy-test@^3, fancy-test@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-3.0.1.tgz#8b19ed4ccc8b0625475eabf36fd743e1d0168abb"
-  integrity sha512-Ke1IFOGEBxP2dNg0X7ZYPUSwKSRr5GNn3xM/2DpHkP86riF3MFDpesXJuD1TGm7gcfwBtYpuSzuw3m704bThVg==
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-3.0.6.tgz#b41900894cda8ce94e9e51ef1897b096afa46111"
+  integrity sha512-Js1ixKwDXU92yDhpCP5cG5IRKBUIaAO5ka11a7Kdpv0IbN4DSp8a9P/12oFiOSGJiiumHH1WgcTsA5f4V65OyQ==
   dependencies:
     "@types/chai" "*"
     "@types/lodash" "*"
@@ -2607,7 +2607,7 @@ fancy-test@^3, fancy-test@^3.0.1:
     "@types/sinon" "*"
     lodash "^4.17.13"
     mock-stdin "^1.0.0"
-    nock "^13.3.3"
+    nock "^13.4.0"
     sinon "^16.0.0"
     stdout-stderr "^0.1.9"
 
@@ -4401,14 +4401,13 @@ no-case@^3.0.4:
     lower-case "^2.0.2"
     tslib "^2.0.3"
 
-nock@^13.3.3:
-  version "13.3.3"
-  resolved "https://registry.yarnpkg.com/nock/-/nock-13.3.3.tgz#179759c07d3f88ad3e794ace885629c1adfd3fe7"
-  integrity sha512-z+KUlILy9SK/RjpeXDiDUEAq4T94ADPHE3qaRkf66mpEhzc/ytOMm3Bwdrbq6k1tMWkbdujiKim3G2tfQARuJw==
+nock@^13.4.0:
+  version "13.4.0"
+  resolved "https://registry.yarnpkg.com/nock/-/nock-13.4.0.tgz#60aa3f7a4afa9c12052e74d8fb7550f682ef0115"
+  integrity sha512-W8NVHjO/LCTNA64yxAPHV/K47LpGYcVzgKd3Q0n6owhwvD0Dgoterc25R4rnZbckJEb6Loxz1f5QMuJpJnbSyQ==
   dependencies:
     debug "^4.1.0"
     json-stringify-safe "^5.0.1"
-    lodash "^4.17.21"
     propagate "^2.0.0"
 
 node-fetch@^2.6.7:
