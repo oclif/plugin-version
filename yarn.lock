@@ -492,7 +492,7 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^3.0.4", "@oclif/core@^3.12.0", "@oclif/core@^3.15.0", "@oclif/core@^3.3.1":
+"@oclif/core@^3.0.4", "@oclif/core@^3.15.0", "@oclif/core@^3.3.1":
   version "3.15.0"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.15.0.tgz#28405012137fa92efcc5a2c4d61336dd64c697cb"
   integrity sha512-A1EVh4gv7mqAJ9OGVxLugaLcHvQnGwvOnPToP8OT9AldJ0LwVExOwhhlnOstYca33MIpGH00twYxWMS5nxMuDQ==
@@ -558,13 +558,13 @@
   integrity sha512-XB8kwQj8zynXjIIWRm+6gO/r8Qft2xKtwBMSmq1JRqtA6TpwpqECqiu8LosBCyg2JBXuUy2lU23/L98KIR7FrQ==
 
 "@oclif/test@^3":
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/@oclif/test/-/test-3.1.3.tgz#42d98e3e2c29a3340dedd7eab7c0a7e392c2f3cf"
-  integrity sha512-p4Z+SpGSW6pw/QQrQwVuG8eOuZtUl/hxh2rgaOkDfxWipb6FVNa08kzuE70rYaIDIq/9SFglcOb9YQmOXv2MEA==
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@oclif/test/-/test-3.1.5.tgz#4b4486b7478e6407c56e6d6acc54f073664bb839"
+  integrity sha512-SYA44is3O/2BRQKBmp/6M1VgqRXnYQpsnBIxljICrrPLhEUQh14Ev/8IuL11ULijZMZDeWM+9sPMsj06jsJyBA==
   dependencies:
-    "@oclif/core" "^3.12.0"
+    "@oclif/core" "^3.15.0"
     chai "^4.3.10"
-    fancy-test "^3.0.1"
+    fancy-test "^3.0.4"
 
 "@octokit/auth-token@^2.4.4":
   version "2.5.0"
@@ -2596,7 +2596,7 @@ external-editor@^3.0.3:
     iconv-lite "^0.4.24"
     tmp "^0.0.33"
 
-fancy-test@^3, fancy-test@^3.0.1:
+fancy-test@^3, fancy-test@^3.0.4:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-3.0.6.tgz#b41900894cda8ce94e9e51ef1897b096afa46111"
   integrity sha512-Js1ixKwDXU92yDhpCP5cG5IRKBUIaAO5ka11a7Kdpv0IbN4DSp8a9P/12oFiOSGJiiumHH1WgcTsA5f4V65OyQ==
