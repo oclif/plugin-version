@@ -62,7 +62,7 @@
     "postpublish": "yarn clean",
     "posttest": "yarn lint",
     "prepare": "husky install && yarn build",
-    "prepublishOnly": "yarn build && oclif manifest . && oclif readme && oclif lock",
+    "prepublishOnly": "yarn build && oclif manifest . && oclif readme && oclif lock && npm shrinkwrap",
     "pretest": "yarn build --noEmit && tsc -p test --noEmit",
     "preversion": "yarn clean",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
