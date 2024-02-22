@@ -5,10 +5,10 @@
   "author": "Salesforce",
   "bugs": "https://github.com/oclif/plugin-version/issues",
   "dependencies": {
-    "@oclif/core": "^3.18.2"
+    "@oclif/core": "^3.19.5"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^17.8.1",
+    "@commitlint/config-conventional": "^18",
     "@oclif/plugin-help": "^6",
     "@oclif/prettier-config": "^0.2.1",
     "@oclif/test": "^3",
@@ -16,14 +16,13 @@
     "@types/mocha": "^10",
     "@types/node": "^18",
     "chai": "^4.4.1",
-    "commitlint": "^17.8.1",
+    "commitlint": "^18",
     "eslint": "^8.56.0",
     "eslint-config-oclif": "^5",
     "eslint-config-oclif-typescript": "^3",
     "eslint-config-prettier": "^9.1.0",
-    "fancy-test": "^3",
-    "husky": "^8",
-    "lint-staged": "^14.0.1",
+    "husky": "^9",
+    "lint-staged": "^15",
     "mocha": "^10.3.0",
     "oclif": "^4",
     "prettier": "^3.2.5",
@@ -36,7 +35,7 @@
   },
   "files": [
     "oclif.manifest.json",
-    "oclif.lock",
+    "npm-shrinkwrap.json",
     "/lib"
   ],
   "homepage": "https://github.com/oclif/plugin-version",
@@ -54,15 +53,14 @@
   "repository": "oclif/plugin-version",
   "scripts": {
     "build": "shx rm -rf lib && tsc",
-    "clean": "shx rm -f oclif.manifest.json oclif.lock",
-    "commitlint": "commitlint",
+    "clean": "shx rm -f oclif.manifest.json npm-shrinkwrap.json",
+    "compile": "tsc",
     "lint": "eslint . --ext .ts",
-    "postpublish": "yarn run clean",
+    "postpack": "yarn run clean",
     "posttest": "yarn lint",
-    "prepare": "husky install && yarn build",
-    "prepublishOnly": "yarn run build && oclif lock && oclif manifest . && oclif readme",
+    "prepack": "yarn build && oclif manifest && oclif readme && npm shrinkwrap",
+    "prepare": "husky",
     "pretest": "yarn build --noEmit && tsc -p test --noEmit",
-    "preversion": "yarn run clean",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif readme && git add README.md"
   },
