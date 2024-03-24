@@ -8,27 +8,9 @@ An oclif command that shows the CLI version
 
 <!-- commands -->
 
-- [`@oclif/plugin-version version`](#oclifplugin-version-version)
+# Command Topics
 
-## `@oclif/plugin-version version`
-
-```
-USAGE
-  $ @oclif/plugin-version version [--json] [--verbose]
-
-FLAGS
-  --verbose  Show additional information about the CLI.
-
-GLOBAL FLAGS
-  --json  Format output as json.
-
-FLAG DESCRIPTIONS
-  --verbose  Show additional information about the CLI.
-
-    Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
-```
-
-_See code: [src/commands/version.ts](https://github.com/oclif/plugin-version/blob/v2.0.14/src/commands/version.ts)_
+- [`@oclif/plugin-version version`](docs/version.md)
 
 <!-- commandsstop -->
 
