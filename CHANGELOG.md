@@ -1,3 +1,9 @@
+## [2.0.16](https://github.com/oclif/plugin-version/compare/2.0.15...2.0.16) (2024-03-25)
+
+### Bug Fixes
+
+- remove docs directory ([e91b5aa](https://github.com/oclif/plugin-version/commit/e91b5aa6edf9a85af493faa6a83ec517452f3567))
+
 ## [2.0.15](https://github.com/oclif/plugin-version/compare/2.0.14...2.0.15) (2024-03-24)
 
 ### Bug Fixes
