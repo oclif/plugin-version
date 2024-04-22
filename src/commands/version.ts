@@ -1,9 +1,9 @@
 import {Command, Flags, Interfaces} from '@oclif/core'
 import {EOL} from 'node:os'
 
-export type VersionDetail = Omit<Interfaces.VersionDetails, 'pluginVersions'> & {
+export type VersionDetail = {
   pluginVersions?: string[]
-}
+} & Omit<Interfaces.VersionDetails, 'pluginVersions'>
 
 export default class Version extends Command {
   static enableJsonFlag = true
