@@ -1,9 +1,86 @@
 import {Command, Flags, Interfaces} from '@oclif/core'
+import {Ansis} from 'ansis'
+import {exec} from 'node:child_process'
 import {EOL} from 'node:os'
+
+const ansis = new Ansis()
 
 export type VersionDetail = {
   pluginVersions?: string[]
 } & Omit<Interfaces.VersionDetails, 'pluginVersions'>
+
+type NpmDetails = {
+  date: string
+  'dist-tags': Record<string, string>
+  name: string
+  time: Record<string, string>
+  version: string
+  versions: string[]
+}
+
+async function getNpmDetails(pkg: string): Promise<NpmDetails | false> {
+  return new Promise((resolve) => {
+    exec(`npm view ${pkg} --json`, (error, stdout) => {
+      if (error) {
+        resolve(false)
+      } else {
+        resolve(JSON.parse(stdout) as NpmDetails)
+      }
+    })
+  })
+}
+
+function daysAgo(date: string): number {
+  const now = new Date()
+  const then = new Date(date)
+  const diff = now.getTime() - then.getTime()
+  return Math.floor(diff / (1000 * 60 * 60 * 24))
+}
+
+function humanReadableDate(date: string): string {
+  return new Date(date).toDateString()
+}
+
+async function formatPlugins(
+  config: Interfaces.Config,
+  plugins: Record<string, Interfaces.PluginVersionDetail>,
+): Promise<string[]> {
+  const sorted = Object.entries(plugins)
+    .map(([name, plugin]) => ({name, ...plugin}))
+    .sort((a, b) => (a.name > b.name ? 1 : -1))
+
+  return Promise.all(
+    sorted.map(async (plugin) => {
+      const base =
+        `${getFriendlyName(config, plugin.name)} ${ansis.dim(plugin.version)} ${ansis.dim(`(${plugin.type})`)} ${
+          plugin.type === 'link' ? ansis.dim(plugin.root) : ''
+        }`.trim()
+      if (plugin.type === 'user') {
+        const npmDetails = await getNpmDetails(plugin.name)
+        const publishedString = npmDetails
+          ? ansis.dim(
+              ` published ${daysAgo(npmDetails.time[npmDetails.version])} days ago (${humanReadableDate(npmDetails.time[npmDetails.version])})`,
+            )
+          : ''
+        const notLatestWarning =
+          npmDetails && plugin.version !== npmDetails['dist-tags'].latest
+            ? ansis.red(` (latest is ${npmDetails['dist-tags'].latest})`)
+            : ''
+        return `${base}${publishedString}${notLatestWarning}`
+      }
+
+      return base
+    }),
+  )
+}
+
+function getFriendlyName(config: Interfaces.Config, name: string): string {
+  const {scope} = config.pjson.oclif
+  if (!scope) return name
+  const match = name.match(`@${scope}/plugin-(.+)`)
+  if (!match) return name
+  return match[1]
+}
 
 export default class Version extends Command {
   static enableJsonFlag = true
@@ -23,28 +100,39 @@ export default class Version extends Command {
 
     let output = `${this.config.userAgent}`
     if (flags.verbose) {
-      versionDetail.pluginVersions = this.formatPlugins(pluginVersions ?? {})
+      const details = await getNpmDetails(this.config.pjson.name)
+
+      const cliPublishedString = details
+        ? ansis.dim(
+            ` published ${daysAgo(details.time[details.version])} days ago (${humanReadableDate(details.time[details.version])})`,
+          )
+        : ''
+      const notLatestWarning =
+        details && this.config.version !== details['dist-tags'].latest
+          ? ansis.red(` (latest is ${details['dist-tags'].latest})`)
+          : ''
+      versionDetail.pluginVersions = await formatPlugins(this.config, pluginVersions ?? {})
       versionDetail.shell ??= 'unknown'
 
-      output = ` CLI Version:
-\t${versionDetail.cliVersion}
+      output = ` ${ansis.bold('CLI Version')}:
+\t${versionDetail.cliVersion}${cliPublishedString}${notLatestWarning}
 
- Architecture:
+ ${ansis.bold('Architecture')}:
 \t${versionDetail.architecture}
 
- Node Version:
+ ${ansis.bold('Node Version')}:
 \t${versionDetail.nodeVersion}
 
- Plugin Version:
-\t${flags.verbose ? (versionDetail.pluginVersions ?? []).join(EOL + '\t') : ''}
+ ${ansis.bold('Plugin Versions')}:
+\t${(versionDetail.pluginVersions ?? []).join(EOL + '\t')}
 
- OS and Version:
+ ${ansis.bold('OS and Version')}:
 \t${versionDetail.osVersion}
 
- Shell:
+ ${ansis.bold('Shell')}:
 \t${versionDetail.shell}
 
- Root Path:
+ ${ansis.bold('Root Path')}:
 \t${versionDetail.rootPath}
 `
     }
@@ -52,30 +140,14 @@ export default class Version extends Command {
     this.log(output)
 
     return flags.verbose
-      ? versionDetail
+      ? {
+          ...versionDetail,
+          pluginVersions: versionDetail.pluginVersions?.map((plugin) => ansis.strip(plugin)),
+        }
       : {
           architecture: versionDetail.architecture,
           cliVersion: versionDetail.cliVersion,
           nodeVersion: versionDetail.nodeVersion,
         }
-  }
-
-  private formatPlugins(plugins: Record<string, Interfaces.PluginVersionDetail>): string[] {
-    return Object.entries(plugins)
-      .map(([name, plugin]) => ({name, ...plugin}))
-      .sort((a, b) => (a.name > b.name ? 1 : -1))
-      .map((plugin) =>
-        `${this.getFriendlyName(plugin.name)} ${plugin.version} (${plugin.type}) ${
-          plugin.type === 'link' ? plugin.root : ''
-        }`.trim(),
-      )
-  }
-
-  private getFriendlyName(name: string): string {
-    const {scope} = this.config.pjson.oclif
-    if (!scope) return name
-    const match = name.match(`@${scope}/plugin-(.+)`)
-    if (!match) return name
-    return match[1]
   }
 }
