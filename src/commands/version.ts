@@ -123,7 +123,7 @@ export default class Version extends Command {
  ${ansis.bold('Node Version')}:
 \t${versionDetail.nodeVersion}
 
- ${ansis.bold('Plugin Versions')}:
+ ${ansis.bold('Plugin Version')}:
 \t${(versionDetail.pluginVersions ?? []).join(EOL + '\t')}
 
  ${ansis.bold('OS and Version')}:
