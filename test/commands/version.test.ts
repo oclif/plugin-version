@@ -1,7 +1,10 @@
 import {expect, test} from '@oclif/test'
+import {Ansis} from 'ansis'
 import {readFileSync} from 'node:fs'
 import {release as osRelease, type as osType, userInfo as osUserInfo} from 'node:os'
 import {resolve, sep} from 'node:path'
+
+const ansis = new Ansis()
 
 const pjson = JSON.parse(readFileSync(resolve('package.json'), 'utf8'))
 
@@ -22,19 +25,20 @@ describe('version', () => {
     .stdout()
     .command(['version', '--verbose'])
     .end('runs version --verbose', (output) => {
-      expect(output.stdout).to.contain(' CLI Version:')
-      expect(output.stdout).to.contain(`\t@oclif/plugin-version/${pjson.version}`)
-      expect(output.stdout).to.contain(' Architecture:')
-      expect(output.stdout).to.contain(`\t${process.platform}-${process.arch}`)
-      expect(output.stdout).to.contain(' Node Version:')
-      expect(output.stdout).to.contain(`\tnode-${process.version}`)
-      expect(output.stdout).to.contain(' Plugin Version:')
-      expect(output.stdout).to.contain(' OS and Version:')
-      expect(output.stdout).to.contain(`\t${osType()} ${osRelease()}`)
-      expect(output.stdout).to.contain(' Shell:')
-      expect(output.stdout).to.contain(`\t${getShell()}`)
-      expect(output.stdout).to.contain(' Root Path:')
-      expect(output.stdout).to.contain(`\t${process.cwd()}`)
+      const stdout = ansis.strip(output.stdout)
+      expect(stdout).to.contain(' CLI Version:')
+      expect(stdout).to.contain(`\t@oclif/plugin-version/${pjson.version}`)
+      expect(stdout).to.contain(' Architecture:')
+      expect(stdout).to.contain(`\t${process.platform}-${process.arch}`)
+      expect(stdout).to.contain(' Node Version:')
+      expect(stdout).to.contain(`\tnode-${process.version}`)
+      expect(stdout).to.contain(' Plugin Version:')
+      expect(stdout).to.contain(' OS and Version:')
+      expect(stdout).to.contain(`\t${osType()} ${osRelease()}`)
+      expect(stdout).to.contain(' Shell:')
+      expect(stdout).to.contain(`\t${getShell()}`)
+      expect(stdout).to.contain(' Root Path:')
+      expect(stdout).to.contain(`\t${process.cwd()}`)
     })
 
   test
