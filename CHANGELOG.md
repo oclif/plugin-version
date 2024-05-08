@@ -1,3 +1,9 @@
+# [2.1.0](https://github.com/oclif/plugin-version/compare/2.0.18...2.1.0) (2024-05-08)
+
+### Features
+
+- show publish date on --verbose ([#425](https://github.com/oclif/plugin-version/issues/425)) ([f608c37](https://github.com/oclif/plugin-version/commit/f608c378384b2fb566427118d892697c1abe909b))
+
 ## [2.0.18](https://github.com/oclif/plugin-version/compare/2.0.17...2.0.18) (2024-05-04)
 
 ### Bug Fixes
