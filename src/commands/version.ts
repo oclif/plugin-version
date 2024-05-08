@@ -59,7 +59,7 @@ async function formatPlugins(
         const npmDetails = await getNpmDetails(plugin.name)
         const publishedString = npmDetails
           ? ansis.dim(
-              ` published ${daysAgo(npmDetails.time[npmDetails.version])} days ago (${humanReadableDate(npmDetails.time[npmDetails.version])})`,
+              ` published ${daysAgo(npmDetails.time[plugin.version])} days ago (${humanReadableDate(npmDetails.time[plugin.version])})`,
             )
           : ''
         const notLatestWarning =
