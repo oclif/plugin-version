@@ -1,3 +1,9 @@
+## [2.1.2](https://github.com/oclif/plugin-version/compare/2.1.1...2.1.2) (2024-05-14)
+
+### Bug Fixes
+
+- display current CLI version ([ec0f4fb](https://github.com/oclif/plugin-version/commit/ec0f4fbbdad89ad8fc1dea9b3f2bb211bbcd32d2))
+
 ## [2.1.1](https://github.com/oclif/plugin-version/compare/2.1.0...2.1.1) (2024-05-11)
 
 ### Bug Fixes
