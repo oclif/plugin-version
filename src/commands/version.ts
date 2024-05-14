@@ -104,7 +104,7 @@ export default class Version extends Command {
 
       const cliPublishedString = details
         ? ansis.dim(
-            ` published ${daysAgo(details.time[details.version])} days ago (${humanReadableDate(details.time[details.version])})`,
+            ` published ${daysAgo(details.time[this.config.version])} days ago (${humanReadableDate(details.time[this.config.version])})`,
           )
         : ''
       const notLatestWarning =
