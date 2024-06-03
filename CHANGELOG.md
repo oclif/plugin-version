@@ -1,3 +1,9 @@
+## [2.2.1](https://github.com/oclif/plugin-version/compare/2.2.0...2.2.1) (2024-06-03)
+
+### Bug Fixes
+
+- bump oclif/core ([7b5e325](https://github.com/oclif/plugin-version/commit/7b5e325f2a249b50d411b4c266c25e09eb8fc62e))
+
 # [2.2.0](https://github.com/oclif/plugin-version/compare/2.1.2...2.2.0) (2024-05-31)
 
 ### Features
