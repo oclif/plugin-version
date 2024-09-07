@@ -1251,9 +1251,9 @@
     fastq "^1.6.0"
 
 "@oclif/core@^4":
-  version "4.0.18"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.18.tgz#a4df3fc79645491b5335dca11451c44edf5bf3df"
-  integrity sha512-3EP4zJ+1ndc92UxdNmGX4HhFK5Xh94fWvUeOW1Tu/Ed+/jAljIsbmZyjVhDoE0vV5cftT+3QaVB/LFxaXxty/w==
+  version "4.0.20"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.0.20.tgz#0c7fd743720c39b33b194b5b335c7ffa3a4fffee"
+  integrity sha512-N1RKI/nteiEbd/ilyv/W1tz82SEAeXeQ5oZpdU/WgLrDilHH7cicrT/NBLextJJhH3QTC+1oan0Z5vNzkX6lGA==
   dependencies:
     ansi-escapes "^4.3.2"
     ansis "^3.3.2"
