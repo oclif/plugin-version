@@ -6,7 +6,7 @@
   "bugs": "https://github.com/oclif/plugin-version/issues",
   "dependencies": {
     "@oclif/core": "^4",
-    "ansis": "^3.5.2"
+    "ansis": "^3.8.1"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19",
