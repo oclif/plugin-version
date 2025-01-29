@@ -5,9 +5,9 @@ import {EOL} from 'node:os'
 
 const ansis = new Ansis()
 
-export type VersionDetail = {
+export type VersionDetail = Omit<Interfaces.VersionDetails, 'pluginVersions'> & {
   pluginVersions?: string[]
-} & Omit<Interfaces.VersionDetails, 'pluginVersions'>
+}
 
 type NpmDetails = {
   date: string
@@ -18,7 +18,7 @@ type NpmDetails = {
   versions: string[]
 }
 
-async function getNpmDetails(pkg: string): Promise<NpmDetails | false> {
+async function getNpmDetails(pkg: string): Promise<false | NpmDetails> {
   return new Promise((resolve) => {
     exec(`npm view ${pkg} --json`, (error, stdout) => {
       if (error) {
@@ -84,7 +84,6 @@ function getFriendlyName(config: Interfaces.Config, name: string): string {
 
 export default class Version extends Command {
   static enableJsonFlag = true
-
   public static flags = {
     verbose: Flags.boolean({
       description:
