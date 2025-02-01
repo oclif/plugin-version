@@ -1,7 +1,7 @@
 {
   "name": "@oclif/plugin-version",
   "description": "A command that shows the CLI version",
-  "version": "2.2.22",
+  "version": "2.2.23",
   "author": "Salesforce",
   "bugs": "https://github.com/oclif/plugin-version/issues",
   "dependencies": {
