@@ -45,6 +45,7 @@
   "license": "MIT",
   "exports": "./lib/index.js",
   "oclif": {
+    "repositoryPrefix": "<%- repo %>/blob/<%- version %>/<%- commandPath %>",
     "commands": "./lib/commands",
     "devPlugins": [
       "@oclif/plugin-help"
