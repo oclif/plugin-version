@@ -1,3 +1,9 @@
+## [2.2.46](https://github.com/oclif/plugin-version/compare/2.2.45...2.2.46) (2026-05-15)
+
+### Bug Fixes
+
+- **deps:** bump flatted from 3.3.2 to 3.4.2 ([#849](https://github.com/oclif/plugin-version/issues/849)) ([9d4664f](https://github.com/oclif/plugin-version/commit/9d4664f5f5bf4fc3dfb908b66f5fe3f048e6117d))
+
 ## [2.2.45](https://github.com/oclif/plugin-version/compare/2.2.44...2.2.45) (2026-05-15)
 
 ### Bug Fixes
