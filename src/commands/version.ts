@@ -1,6 +1,6 @@
 import {Command, Flags, Interfaces} from '@oclif/core'
 import {Ansis} from 'ansis'
-import {exec} from 'node:child_process'
+import {execFile} from 'node:child_process'
 import {EOL} from 'node:os'
 
 const ansis = new Ansis()
@@ -20,11 +20,17 @@ type NpmDetails = {
 
 async function getNpmDetails(pkg: string): Promise<false | NpmDetails> {
   return new Promise((resolve) => {
-    exec(`npm view ${pkg} --json`, (error, stdout) => {
+    // Use execFile instead of exec to avoid shell interpretation.
+    // exec invokes cmd.exe on Windows, which resolves commands from CWD before PATH.
+    execFile('npm', ['view', pkg, '--json'], (error, stdout) => {
       if (error) {
         resolve(false)
       } else {
-        resolve(JSON.parse(stdout) as NpmDetails)
+        try {
+          resolve(JSON.parse(stdout) as NpmDetails)
+        } catch {
+          resolve(false)
+        }
       }
     })
   })
