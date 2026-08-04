@@ -1,3 +1,10 @@
+## [2.2.54](https://github.com/oclif/plugin-version/compare/2.2.53...2.2.54) (2026-08-04)
+
+### Bug Fixes
+
+- use execFile to bypass shell command resolution ([0c47ede](https://github.com/oclif/plugin-version/commit/0c47ede527c40d780d1de294c3e4a2523b3e5308))
+- add string value to fix git2gus ([fb3971d](https://github.com/oclif/plugin-version/commit/fb3971d22b7bf0f164958c79877e7ee0c1290df0))
+
 ## [2.2.53](https://github.com/oclif/plugin-version/compare/2.2.52...2.2.53) (2026-08-01)
 
 ### Bug Fixes
