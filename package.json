@@ -6,7 +6,8 @@
   "bugs": "https://github.com/oclif/plugin-version/issues",
   "dependencies": {
     "@oclif/core": "^4",
-    "ansis": "^3.17.0"
+    "ansis": "^3.17.0",
+    "which": "^4"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19",
@@ -17,6 +18,7 @@
     "@types/chai": "^4.3.17",
     "@types/mocha": "^10",
     "@types/node": "^18",
+    "@types/which": "^3",
     "chai": "^4.5.0",
     "commitlint": "^19",
     "eslint": "^9.39.5",
