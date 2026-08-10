@@ -2,7 +2,7 @@ import {Command, Flags, Interfaces} from '@oclif/core'
 import {Ansis} from 'ansis'
 import {execFile} from 'node:child_process'
 import {EOL} from 'node:os'
-import {resolve} from 'node:path'
+import {dirname, resolve} from 'node:path'
 import which from 'which'
 
 const ansis = new Ansis()
@@ -26,7 +26,7 @@ async function getNpmDetails(pkg: string): Promise<false | NpmDetails> {
     // and the `which` module resolve executables from CWD before PATH.
     const cwd = resolve(process.cwd())
     const npmPath = which.sync('npm', {nothrow: true})
-    if (!npmPath || resolve(npmPath).startsWith(cwd)) {
+    if (!npmPath || dirname(resolve(npmPath)) === cwd) {
       resolve_(false)
       return
     }
