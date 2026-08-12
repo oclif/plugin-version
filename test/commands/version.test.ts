@@ -2,9 +2,9 @@ import {runCommand} from '@oclif/test'
 import {expect} from 'chai'
 import {readFileSync} from 'node:fs'
 import {release, type} from 'node:os'
-import {resolve} from 'node:path'
+import path from 'node:path'
 
-const pjson = JSON.parse(readFileSync(resolve('package.json'), 'utf8'))
+const pjson = JSON.parse(readFileSync(path.resolve('package.json'), 'utf8')) as {version: string}
 
 describe('version', () => {
   it('runs version', async () => {
@@ -32,13 +32,13 @@ describe('version', () => {
 
   it('runs version --json', async () => {
     const {stdout} = await runCommand('version --json')
-    const json = JSON.parse(stdout)
+    const json = JSON.parse(stdout) as unknown
     expect(json).to.have.keys(['cliVersion', 'architecture', 'nodeVersion'])
   })
 
   it('runs version --json --verbose', async () => {
     const {stdout} = await runCommand('version --json --verbose')
-    const json = JSON.parse(stdout)
+    const json = JSON.parse(stdout) as unknown
     expect(json).to.have.property('architecture', `${process.platform}-${process.arch}`)
     expect(json).to.have.property('cliVersion', `@oclif/plugin-version/${pjson.version}`)
     expect(json).to.have.property('nodeVersion', `node-${process.version}`)

@@ -1,4 +1,4 @@
-import {Command, Flags, Interfaces} from '@oclif/core'
+import {Command, Flags, type Interfaces} from '@oclif/core'
 import {Ansis} from 'ansis'
 import {execFile} from 'node:child_process'
 import {EOL} from 'node:os'
@@ -53,7 +53,8 @@ async function formatPlugins(
 ): Promise<string[]> {
   const sorted = Object.entries(plugins)
     .map(([name, plugin]) => ({name, ...plugin}))
-    .sort((a, b) => (a.name > b.name ? 1 : -1))
+    // eslint-disable-next-line unicorn/prefer-simple-sort-comparator
+    .toSorted((a, b) => (a.name > b.name ? 1 : -1))
 
   return Promise.all(
     sorted.map(async (plugin) => {
@@ -103,7 +104,7 @@ export default class Version extends Command {
     const {pluginVersions, ...theRest} = this.config.versionDetails
     const versionDetail: VersionDetail = {...theRest}
 
-    let output = `${this.config.userAgent}`
+    let output = this.config.userAgent
     if (flags.verbose) {
       const details = await getNpmDetails(this.config.pjson.name)
 
