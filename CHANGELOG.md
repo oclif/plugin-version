@@ -1,3 +1,10 @@
+## [2.2.57](https://github.com/oclif/plugin-version/compare/2.2.56...2.2.57) (2026-08-13)
+
+### Bug Fixes
+
+- reject npm resolved from CWD to prevent executable hijacking on Windows ([5b49be0](https://github.com/oclif/plugin-version/commit/5b49be089dc511df48d19fb7ba87a9b4bded4c4f))
+- use dirname check ([108ca76](https://github.com/oclif/plugin-version/commit/108ca76318fc009a30ffc26909bbee8e11d159e4))
+
 ## [2.2.56](https://github.com/oclif/plugin-version/compare/2.2.55...2.2.56) (2026-08-08)
 
 ### Bug Fixes
