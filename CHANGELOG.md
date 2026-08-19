@@ -1,3 +1,13 @@
+# [2.3.0](https://github.com/oclif/plugin-version/compare/2.2.57...2.3.0) (2026-08-19)
+
+### Bug Fixes
+
+- test failure ([6487b91](https://github.com/oclif/plugin-version/commit/6487b9142c1ccbea6fc991d854e3cd952334a9ff))
+
+### Features
+
+- bumped eslint to v10 (W-23473845) ([f15fad2](https://github.com/oclif/plugin-version/commit/f15fad29f05f2a0df39c68512153b2b479c35862))
+
 ## [2.2.57](https://github.com/oclif/plugin-version/compare/2.2.56...2.2.57) (2026-08-13)
 
 ### Bug Fixes
