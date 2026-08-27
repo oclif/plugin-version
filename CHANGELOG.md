@@ -1,3 +1,9 @@
+# [2.4.0](https://github.com/oclif/plugin-version/compare/2.3.0...2.4.0) (2026-08-27)
+
+### Features
+
+- bumping to ts6 (W-23983544) ([a649e0e](https://github.com/oclif/plugin-version/commit/a649e0e58a42ea043b3e170fa72716a0568bf478))
+
 # [2.3.0](https://github.com/oclif/plugin-version/compare/2.2.57...2.3.0) (2026-08-19)
 
 ### Bug Fixes
