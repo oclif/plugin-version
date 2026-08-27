@@ -2,7 +2,7 @@ import {Command, Flags, type Interfaces} from '@oclif/core'
 import {Ansis} from 'ansis'
 import {execFile} from 'node:child_process'
 import {EOL} from 'node:os'
-import {dirname, resolve} from 'node:path'
+import path from 'node:path'
 import which from 'which'
 
 const ansis = new Ansis()
@@ -24,15 +24,15 @@ async function getNpmDetails(pkg: string): Promise<false | NpmDetails> {
   return new Promise((resolve_) => {
     // Resolve npm from PATH only, excluding CWD. On Windows, both execFile (CreateProcess)
     // and the `which` module resolve executables from CWD before PATH.
-    const cwd = resolve(process.cwd())
+    const cwd = path.resolve(process.cwd())
     const npmPath = which.sync('npm', {nothrow: true})
-    if (!npmPath || dirname(resolve(npmPath)) === cwd) {
+    if (!npmPath || path.dirname(path.resolve(npmPath)) === cwd) {
       resolve_(false)
       return
     }
 
-    const useShell = /\.(cmd|bat)$/i.test(npmPath)
-    execFile(npmPath, ['view', pkg, '--json'], {shell: useShell}, (error, stdout) => {
+    const isUseShell = /\.(cmd|bat)$/iv.test(npmPath)
+    execFile(npmPath, ['view', pkg, '--json'], {shell: isUseShell}, (error, stdout) => {
       if (error) {
         resolve_(false)
       } else {
