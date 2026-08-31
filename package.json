@@ -5,7 +5,7 @@
   "author": "Salesforce",
   "bugs": "https://github.com/oclif/plugin-version/issues",
   "dependencies": {
-    "@oclif/core": "^4",
+    "@oclif/core": "^5.0.0",
     "ansis": "^3.17.0",
     "which": "^4"
   },
@@ -14,7 +14,7 @@
     "@eslint/compat": "^1.4.1",
     "@oclif/plugin-help": "^6",
     "@oclif/prettier-config": "^0.2.1",
-    "@oclif/test": "^4",
+    "@oclif/test": "^5.0.0",
     "@types/chai": "^4.3.17",
     "@types/mocha": "^10",
     "@types/node": "^18",
@@ -34,7 +34,7 @@
     "typescript": "^6"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   },
   "files": [
     "oclif.manifest.json",
