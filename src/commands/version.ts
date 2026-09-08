@@ -37,7 +37,13 @@ async function getNpmDetails(pkg: string): Promise<false | NpmDetails> {
         resolve_(false)
       } else {
         try {
-          resolve_(JSON.parse(stdout) as NpmDetails)
+          const parsedUnknown: unknown = JSON.parse(stdout) as unknown
+          // Depending on NPM version, this could either be an array containing one NpmDetails, or the NpmDetails itself.
+          if (Array.isArray(parsedUnknown)) {
+            resolve_((parsedUnknown as NpmDetails[])[0])
+          } else {
+            resolve_(parsedUnknown as NpmDetails)
+          }
         } catch {
           resolve_(false)
         }
