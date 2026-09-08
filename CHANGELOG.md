@@ -1,3 +1,9 @@
+## [3.0.1](https://github.com/oclif/plugin-version/compare/3.0.0...3.0.1) (2026-09-08)
+
+### Bug Fixes
+
+- handles possible NpmDetails array (W-24124675) ([4a28dd8](https://github.com/oclif/plugin-version/commit/4a28dd863c41a0405ed10ae623a13ab10de692fb))
+
 # [3.0.0](https://github.com/oclif/plugin-version/compare/2.4.0...3.0.0) (2026-08-31)
 
 - feat!: upgrade oclif/core to v5 @W-23512455@ ([333c810](https://github.com/oclif/plugin-version/commit/333c8107072d8dfc8b06e22586d0110ffe813ce9))
