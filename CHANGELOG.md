@@ -1,3 +1,9 @@
+## [3.0.4](https://github.com/oclif/plugin-version/compare/3.0.3...3.0.4) (2026-10-09)
+
+### Bug Fixes
+
+- **deps:** bump @humanfs/node from 0.16.6 to 0.16.8 ([#915](https://github.com/oclif/plugin-version/issues/915)) ([3dc5ac1](https://github.com/oclif/plugin-version/commit/3dc5ac19c49f4e39848ccdcdeea08a65301514ef))
+
 ## [3.0.3](https://github.com/oclif/plugin-version/compare/3.0.2...3.0.3) (2026-10-09)
 
 ### Bug Fixes
