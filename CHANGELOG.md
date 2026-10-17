@@ -1,3 +1,9 @@
+## [3.0.6](https://github.com/oclif/plugin-version/compare/3.0.5...3.0.6) (2026-10-17)
+
+### Bug Fixes
+
+- **deps:** bump @oclif/core from 5.1.2 to 5.1.8 ([#930](https://github.com/oclif/plugin-version/issues/930)) ([1ed792c](https://github.com/oclif/plugin-version/commit/1ed792c37969613b4d9f046ffcac423f285d3daa))
+
 ## [3.0.5](https://github.com/oclif/plugin-version/compare/3.0.4...3.0.5) (2026-10-11)
 
 ### Bug Fixes
